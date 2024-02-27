@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload</title>
+  </head>
+  <body>
+    <input type="file" id="fileInput" />
+
+    <script>
+      async function uploadFile() {
+        const fileInput = document.getElementById("fileInput");
+        const file = fileInput.files[0];
+
+        if (!file) {
+          console.log("Please select a file.");
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("avatar", file);
+        formData.append(
+          "jsonData",
+          JSON.stringify({
+            fullname: "bernard",
+          })
+        );
+        const response = await fetch(
+          "http://localhost:2000/api/upload-avatar",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+        const result = await response.text();
+        if (response.ok) {
+          console.log(result);
+        } else {
+          console.log(result);
+        }
+      }
+    </script>
+  </body>
+</html>

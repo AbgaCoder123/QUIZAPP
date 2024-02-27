@@ -1,0 +1,25 @@
+post http://localhost:2000/api/register/step1
+Content-Type: application/json
+
+{
+    "email":"bernardgodsgift@gmail.com",
+    "password":"Ben123"
+}
+
+
+###
+post http://localhost:2000/api/register/step2
+Content-Type: application/json
+
+{
+    "fullname":"Bernard Godsgift",
+    "username":"Bernard123"
+}
+
+###
+post http://localhost:2000/api/register/step3
+Content-Type: application/json
+
+{
+    "topics" : "Bernard",
+}

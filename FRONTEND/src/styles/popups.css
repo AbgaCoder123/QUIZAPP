@@ -1,0 +1,26 @@
+.popup_entrance {
+  animation: entrance 0.3s cubic-bezier(0.5, 0, 0.75, 0) 0s 1 normal forwards;
+}
+@keyframes entrance {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+.popup_exit {
+  animation: exit 0.3s cubic-bezier(0.5, 0, 0.75, 0) 0s 1 normal forwards;
+}
+@keyframes exit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
